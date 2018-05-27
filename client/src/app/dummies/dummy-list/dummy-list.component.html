@@ -1,0 +1,17 @@
+<table class="table table-hover">
+	<tr>
+		<th>Name</th>
+		<th>Flag</th>
+		<th>Amount</th>
+		<th class="text-right"><a routerLink="/dummies/new"><span class="text-primary fa fa-plus"></span></a></th>
+	</tr>
+	<tr class="pointer" *ngFor="let dummy of dummies" (click)="openDetail(dummy)">
+		<td>{{dummy.name}}</td>
+		<td>{{dummy.flag}}</td>
+		<td>{{dummy.amount}}</td>
+		<td></td>
+	</tr>
+	<tr *ngIf="dummies && !dummies.length">
+		<td colspan="99" class="text-center text-muted">No dummies exist yet</td>
+	</tr>
+</table>

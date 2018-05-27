@@ -1,0 +1,24 @@
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title">Dummy Detail</h5>
+
+		<form #form="ngForm" novalidate *ngIf="dummy">
+			<div class="row mb-4">
+				<div class="col-4 form-group">
+					<label>Name</label>
+					<input class="form-control" [(ngModel)]="dummy.name" name="name" required>
+				</div>
+				<div class="col-4 form-group">
+					<label>Flag</label><br>
+					<input type="checkbox" [(ngModel)]="dummy.flag" name="flag">
+				</div>
+				<div class="col-4 form-group">
+					<label>Amount</label>
+					<input type="number" class="form-control"  [(ngModel)]="dummy.amount" name="amount">
+				</div>
+			</div>
+
+			<button class="btn btn-primary"  (click)="save()"  [disabled]="form.invalid || form.pristine">Save</button>
+		</form>
+	</div>
+</div>
