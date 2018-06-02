@@ -42,4 +42,17 @@ export class ApiService {
 	saveAnimal(animal):Promise<any> {
 		return this.httpPost(`/api/animal`, animal);
 	}
+
+	/***********************************************************************************************************************
+	 * Customers
+	 **********************************************************************************************************************/
+	getCustomers():Promise<any[]> {
+		return this.httpGet(`/api/customer`);
+	}
+	getCustomer(id):Promise<any> {
+		return this.httpGet(`/api/customer/${id}`);
+	}
+	saveCustomer(customer):Promise<any> {
+		return this.httpPost(`/api/customer`, customer);
+	}
 }

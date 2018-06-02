@@ -1,0 +1,29 @@
+<div class="card">
+	<form #form="ngForm" novalidate *ngIf="customer">
+		<div class="card-body">
+			<h5 class="card-title">Customer Detail</h5>
+
+			<div class="row mb-4">
+				<div class="col-4 form-group">
+					<label>Name</label>
+					<input class="form-control" [(ngModel)]="customer.name" name="name" required>
+				</div>
+				<div class="col-4 form-group">
+					<label>Phone</label>
+					<input type="phone" class="form-control" [(ngModel)]="customer.phone" name="phone">
+				</div>
+				<div class="col-4 form-group">
+					<label>Email</label>
+					<input type="email" class="form-control" [(ngModel)]="customer.email" name="email">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="card-footer d-flex justify-content-between">
+			<button class="btn btn-danger"  (click)="delete()" *ngIf="customer._id">Delete</button>
+			<button class="btn btn-primary" (click)="save()" [disabled]="form.invalid || form.pristine">Save</button>
+		</div>
+
+	</form>
+</div>

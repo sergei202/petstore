@@ -6,6 +6,8 @@ import { DummyListComponent }		from './dummies/dummy-list/dummy-list.component';
 import { DummyDetailComponent }		from './dummies/dummy-detail/dummy-detail.component';
 import { AnimalListComponent }		from './animals/animal-list/animal-list.component';
 import { AnimalDetailComponent }	from './animals/animal-detail/animal-detail.component';
+import { CustomerListComponent }	from './customers/customer-list/customer-list.component';
+import { CustomerDetailComponent }	from './customers/customer-detail/customer-detail.component';
 
 const routes:Routes = [
 	{path:'home',			component:HomeComponent},
@@ -13,6 +15,8 @@ const routes:Routes = [
 	{path:'dummies/:id',	component:DummyDetailComponent},
 	{path:'animals',		component:AnimalListComponent},
 	{path:'animals/:id',	component:AnimalDetailComponent},
+	{path:'customers',		component:CustomerListComponent},
+	{path:'customers/:id',	component:CustomerDetailComponent},
 	{path: '**',			redirectTo:'/home'}						// Redirect anything not found to /home
 ];
 

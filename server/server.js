@@ -17,7 +17,9 @@ app.get('/', (req,res) => res.send('Nothing here.  Did you mean to hit the front
 
 // Load our routers and mount them.
 // Note that we are mounting dummyRouter at /dummy.  This means that dummyRouter's / route will accessible as /api/dummy.
-const dummyRouter  = require('./routers/dummyRouter');
-const animalRouter = require('./routers/animalRouter');
-app.use('/api/dummy',  dummyRouter);
-app.use('/api/animal', animalRouter);
+const dummyRouter    = require('./routers/dummyRouter');
+const animalRouter   = require('./routers/animalRouter');
+const customerRouter = require('./routers/customerRouter');
+app.use('/api/dummy',    dummyRouter);
+app.use('/api/animal',   animalRouter);
+app.use('/api/customer', customerRouter);
