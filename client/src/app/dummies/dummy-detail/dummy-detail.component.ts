@@ -17,11 +17,11 @@ export class DummyDetailComponent {
 			console.log('Creating a new (blank) dummy');
 			this.dummy = {};
 		} else {
-			this.loadDummy(id);
+			this.load(id);
 		}
 	}
 
-	loadDummy(id) {
+	load(id) {
 		this.api.getDummy(id).then(dummy => {
 			console.log('getDummy: %o', dummy);
 			this.dummy = dummy;

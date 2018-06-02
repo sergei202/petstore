@@ -1,0 +1,30 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Adopted</th>
+			<th class="text-right"><a routerLink="/animals/new"><span class="text-primary fa fa-plus"></span></a></th>
+		</tr>
+	</thead>
+	<tr class="pointer" *ngFor="let animal of animals" (click)="openDetail(animal)">
+		<td>{{animal.name}}</td>
+		<td>{{animal.type}}</td>
+		<td>{{animal.adopted ? 'Yes' : 'No'}}</td>
+		<td></td>
+	</tr>
+	<tfoot>
+		<tr *ngIf="animals && !animals.length">
+			<td colspan="99" class="text-center text-muted">No animals exist yet</td>
+		</tr>
+	</tfoot>
+</table>
+
+<h4>Animal Stats:</h4>
+<ul>
+	<li>Total Animals: {{totalAnimals}}</li>
+	<li>Total Adopted: {{totalAdopted}}</li>
+	<li>Total Not Adopted: {{totalAnimals-totalAdopted}}</li>
+
+	<li>Total Dogs: {{totalDogs}}</li>
+</ul>

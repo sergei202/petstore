@@ -1,0 +1,32 @@
+<div class="card">
+	<form #form="ngForm" novalidate *ngIf="animal">
+		<div class="card-body">
+			<h5 class="card-title">Animal Detail</h5>
+
+			<div class="row mb-4">
+				<div class="col-4 form-group">
+					<label>Name</label>
+					<input class="form-control" [(ngModel)]="animal.name" name="name" required>
+				</div>
+				<div class="col-4 form-group">
+					<label>Type</label>
+					<!-- <input class="form-control" [(ngModel)]="animal.type" name="type" required placeholder="Cat, dog, bird, etc"> -->
+					<select class="form-control" [(ngModel)]="animal.type" name="type">
+						<option *ngFor="let type of types">{{type}}</option>
+					</select>
+				</div>
+				<div class="col-4 form-group">
+					<label>Adopted?</label><br>
+					<input type="checkbox" [(ngModel)]="animal.adopted" name="adopted">
+				</div>
+
+			</div>
+		</div>
+
+		<div class="card-footer d-flex justify-content-between">
+			<button class="btn btn-danger"  (click)="delete()" *ngIf="animal._id">Delete</button>
+			<button class="btn btn-primary" (click)="save()" [disabled]="form.invalid || form.pristine">Save</button>
+		</div>
+
+	</form>
+</div>

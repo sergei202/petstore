@@ -10,6 +10,8 @@ import { SidenavComponent }		from './sidenav/sidenav.component';
 import { HomeComponent }		from './home/home.component';
 import { DummyListComponent }	from './dummies/dummy-list/dummy-list.component';
 import { DummyDetailComponent }	from './dummies/dummy-detail/dummy-detail.component';
+import { AnimalListComponent } from './animals/animal-list/animal-list.component';
+import { AnimalDetailComponent } from './animals/animal-detail/animal-detail.component';
 
 @NgModule({
 	declarations: [
@@ -17,7 +19,9 @@ import { DummyDetailComponent }	from './dummies/dummy-detail/dummy-detail.compon
 		SidenavComponent,
 		HomeComponent,
 		DummyListComponent,
-		DummyDetailComponent
+		DummyDetailComponent,
+		AnimalListComponent,
+		AnimalDetailComponent
 	],
 	imports: [
 		BrowserModule,
