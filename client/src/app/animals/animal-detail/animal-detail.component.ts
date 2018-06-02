@@ -10,6 +10,7 @@ import { ApiService }				from '../../api.service';
 export class AnimalDetailComponent {
 	animal:any;
 	types = ['Cat','Dog','Bird','Fish','Other'];
+	owners = [];
 
 	constructor(private api:ApiService, private route:ActivatedRoute, private router:Router) {
 		var id = this.route.snapshot.paramMap.get('id');
@@ -20,6 +21,8 @@ export class AnimalDetailComponent {
 		} else {
 			this.load(id);
 		}
+
+		this.api.getCustomers().then(owners => this.owners=owners);
 	}
 
 	load(id) {

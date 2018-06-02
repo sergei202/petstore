@@ -1,8 +1,10 @@
 const Animal = require('../models/animal');
+const Customer = require('../models/customer');
+
 
 // Returns a promise that resolves to an array of documents
 function getAnimals() {
-	return Animal.find().exec();
+	return Animal.find().populate('owner').lean().exec();
 }
 
 // Returns a promise that resolves to an array of documents

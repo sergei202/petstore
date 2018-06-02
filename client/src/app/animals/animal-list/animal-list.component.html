@@ -4,6 +4,7 @@
 			<th>Name</th>
 			<th>Type</th>
 			<th>Adopted</th>
+			<th>Owner</th>
 			<th class="text-right"><a routerLink="/animals/new"><span class="text-primary fa fa-plus"></span></a></th>
 		</tr>
 	</thead>
@@ -11,6 +12,7 @@
 		<td>{{animal.name}}</td>
 		<td>{{animal.type}}</td>
 		<td>{{animal.adopted ? 'Yes' : 'No'}}</td>
+		<td>{{animal.owner && animal.owner.name}}</td>
 		<td></td>
 	</tr>
 	<tfoot>

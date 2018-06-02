@@ -4,18 +4,26 @@
 			<h5 class="card-title">Animal Detail</h5>
 
 			<div class="row mb-4">
-				<div class="col-4 form-group">
+				<div class="col-3 form-group">
 					<label>Name</label>
 					<input class="form-control" [(ngModel)]="animal.name" name="name" required>
 				</div>
-				<div class="col-4 form-group">
+				<div class="col-3 form-group">
 					<label>Type</label>
-					<!-- <input class="form-control" [(ngModel)]="animal.type" name="type" required placeholder="Cat, dog, bird, etc"> -->
 					<select class="form-control" [(ngModel)]="animal.type" name="type">
 						<option *ngFor="let type of types">{{type}}</option>
 					</select>
 				</div>
-				<div class="col-4 form-group">
+
+				<div class="col-3 form-group">
+					<label>Owner</label>
+					<select class="form-control" [(ngModel)]="animal.owner" name="owner">
+						<option [ngValue]="null">-- None --</option>
+						<option *ngFor="let owner of owners" [value]="owner._id">{{owner.name}}</option>
+					</select>
+				</div>
+
+				<div class="col-3 form-group">
 					<label>Adopted?</label><br>
 					<input type="checkbox" [(ngModel)]="animal.adopted" name="adopted">
 				</div>
