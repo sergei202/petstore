@@ -13,7 +13,9 @@
 		<td>{{dummy.amount}}</td>
 		<td></td>
 	</tr>
-	<tr *ngIf="dummies && !dummies.length">
-		<td colspan="99" class="text-center text-muted">No dummies exist yet</td>
-	</tr>
+	<tfoot>
+		<tr *ngIf="dummies && !dummies.length">
+			<td colspan="99" class="text-center text-muted">No dummies exist yet</td>
+		</tr>
+	</tfoot>
 </table>

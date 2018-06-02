@@ -14,7 +14,7 @@ export class DummyDetailComponent {
 		var id = this.route.snapshot.paramMap.get('id');
 		// Get the passed id, if it equals 'new', don't try to load.
 		if(id==='new') {
-			console.log('Creating a new (black) dummy');
+			console.log('Creating a new (blank) dummy');
 			this.dummy = {};
 		} else {
 			this.loadDummy(id);
@@ -31,6 +31,16 @@ export class DummyDetailComponent {
 	save() {
 		this.api.saveDummy(this.dummy).then(dummy => {
 			console.log('saveDummy: %o', dummy);
+			// Redirect back to DummyList
+			this.router.navigate(['/dummies']);
+		});
+	}
+
+	delete() {
+		console.log('DummyDetailComponent delete()');
+		this.dummy.delete = true;
+		this.api.saveDummy(this.dummy).then(dummy => {
+			console.log('delete saveDummy: %o', dummy);
 			// Redirect back to DummyList
 			this.router.navigate(['/dummies']);
 		});

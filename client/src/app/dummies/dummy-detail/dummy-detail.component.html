@@ -1,8 +1,8 @@
 <div class="card">
-	<div class="card-body">
-		<h5 class="card-title">Dummy Detail</h5>
+	<form #form="ngForm" novalidate *ngIf="dummy">
+		<div class="card-body">
+			<h5 class="card-title">Dummy Detail</h5>
 
-		<form #form="ngForm" novalidate *ngIf="dummy">
 			<div class="row mb-4">
 				<div class="col-4 form-group">
 					<label>Name</label>
@@ -17,8 +17,12 @@
 					<input type="number" class="form-control"  [(ngModel)]="dummy.amount" name="amount">
 				</div>
 			</div>
+		</div>
 
-			<button class="btn btn-primary"  (click)="save()"  [disabled]="form.invalid || form.pristine">Save</button>
-		</form>
-	</div>
+		<div class="card-footer d-flex justify-content-between">
+			<button class="btn btn-danger"  (click)="delete()" *ngIf="dummy._id">Delete</button>
+			<button class="btn btn-primary" (click)="save()" [disabled]="form.invalid || form.pristine">Save</button>
+		</div>
+
+	</form>
 </div>
